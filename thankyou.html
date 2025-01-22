@@ -3,129 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - SableWall</title>
+    <title>SableWall</title>
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Sonsie+One&display=swap');
+
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
             background-color: #121212;
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
+            font-size: 16px;
+            overflow-x: hidden;
         }
 
-        .container {
-            text-align: center;
-            padding: 40px;
-            background-color: #1a1a1a;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            max-width: 500px;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #4CAF50;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-
-        .purchase-info {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #f39c12;
-        }
-
-        .thank-you-message {
-            font-size: 1.2rem;
-            color: #aaa;
-            margin-top: 30px;
-        }
-
-        .button {
-            padding: 15px 25px;
-            background-color: #4CAF50;
+        header {
+            background-color: #1d1d1d;
             color: white;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: "Calligraffitti", serif;
+            color: #f0f0f0;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        /* Donate Section */
+        .donate-section {
+            background-color: #1d1d1d;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .donate-btn {
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 30px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
             border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-top: 10px;
         }
 
-        .button:hover {
+        .donate-btn:hover {
             background-color: #45a049;
         }
 
+        .donate-message {
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        .wallpapers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        /* Good Vibes Collection Styling */
+        .good-vibes {
+            margin-top: 40px;
+            padding: 40px;
+            background-color: #ffdd57; /* Cartoonish Yellow */
+            color: #333;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 5px solid #ff5733; /* Cartoonish Border */
+        }
+
+        .good-vibes-title {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #ff5733; /* Cartoonish Orange */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: "Sonsie One", serif;
+        }
+
+        .good-vibes-subtitle {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .good-vibes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Main Collection Styling */
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styling */
         footer {
-            margin-top: 30px;
-            font-size: 0.9rem;
+            background-color: #1d1d1d;
             color: #888;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
         }
 
         footer a {
-            color: #4CAF50;
+            color: #4CAF50; /* Green Link Color */
             text-decoration: none;
+            font-weight: bold;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 <body>
+    <!-- Donate Section -->
+    <header>
+        <h1 class="title">SableWall</h1>
+        <p class="subtitle">Explore and Enjoy Aesthetic Wallpapers</p>
+    </header>
 
-    <div class="container">
-        <h1>Thank You for Your Purchase! 🎉</h1>
-        <p>We appreciate your support. Your purchase from SableWall has been successfully completed!</p>
+    <!-- Donate Section -->
+    <center style="margin-top: 10px;">
+        <p class="donate-message">Support our work to keep bringing you the best wallpapers. Your donation helps!</p>
+        <button class="donate-btn" onclick="window.open('https://paypal.me/donateagent')">Donate Now</button>
+    </center>
 
-        <div class="purchase-info" id="purchaseDetails"></div>
-
-        <p class="thank-you-message">Your wallpaper collection is ready to download, and we hope it brings positive vibes to your desktop! 🌟</p>
-
-        <a href="/" class="button">Back to Homepage</a>
-    </div>
+    <main>
+        <!-- Good Vibes Collection -->
+        <section class="good-vibes">
+            <h2 class="good-vibes-title">Good Vibes</h2>
+            <p class="good-vibes-subtitle">A collection designed to bring positivity and calm into your life.</p>
+            <div class="good-vibes-grid">
+                <!-- Wallpaper Images will be added here by script -->
+            </div>
+            <p style="margin-top: 10px;font-size: 20px; color: #333;">Buy the "Good Vibes" Collection (Non-Compressed) for just <strong>$1.99</strong>!</p>
+            <p style="font-size: 16px; color: #555;">Get high-quality, exclusive wallpapers in their original format—no compression, just pure quality.</p>
+            <button onclick="window.location.href='purchase-link.html'" style="background-color: #28a745; color: white; padding: 12px 24px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Buy Now</button>
+        </section>
+    </main>
 
     <footer>
+        <p>2025 SableWall.</p>
         <p>Created with ♥ by <a href="https://instagram.com/jxnil.fr">jxnil.fr</a></p>
+        <div style="margin-top:12px; padding: 20px;border-top: 2px solid #ddd;">
+            <p><strong>SableWall</strong> is not a reserved name, and all images on this site are free to use for personal and commercial purposes. The images on SableWall are licensed under the <strong>Creative Commons Zero (CC0)</strong> license, meaning they can be copied, modified, distributed, and performed, even for commercial purposes, without asking for permission.</p>
+        </div>
     </footer>
 
     <script>
-        // Function to extract query parameters from the URL
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+        // Data for the collections
+        const wallpapersData = {
+            'good-vibes': [
+                { url: 'https://i.postimg.cc/D0bMBDKB/vibes.png', title: 'Good Vibes Neon' },
+            ]
+        };
 
-        // Get the product name and price from the query string and display them
-        const product = getQueryParam('product');
-        const price = getQueryParam('price');
+        // Function to populate wallpapers into the grid
+        const loadWallpapers = (collection) => {
+            const collectionElement = document.querySelector(`.${collection}-grid`);
+            const wallpapers = wallpapersData[collection];
 
-        const purchaseDetails = document.getElementById('purchaseDetails');
-
-        if (product && price) {
-            purchaseDetails.textContent = `You purchased: ${product} for $${price}`;
-        } else {
-            purchaseDetails.textContent = 'No product details found.';
-        }
+            wallpapers.forEach(wallpaper => {
+                const img = document.createElement('img');
+                img.src = wallpaper.url;
+                img.alt = wallpaper.title;
+                collectionElement.appendChild(img);
+            });
+        };
+        
+        loadWallpapers("good-vibes")
     </script>
-
 </body>
 </html>
