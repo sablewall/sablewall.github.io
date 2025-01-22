@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SableWall</title>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Sonsie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Sonsie+One&family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&display=swap');
 
         /* Global Styles */
         * {
@@ -183,6 +183,72 @@
             text-decoration: underline;
         }
 
+        /* Fonts for Details and Button Text */
+        .details-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .buy-now-text {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .buy-btn {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background-color: #218838;
+        }
+
+        /* About Me Section */
+        .about-me {
+            background-color: #1d1d1d;
+            padding: 50px 20px;
+            margin-top: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .about-me h2 {
+            font-size: 2.5rem;
+            font-family: 'Sonsie One', serif;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        .about-me p {
+            font-size: 1.2rem;
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .about-me a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .about-me a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
@@ -206,12 +272,20 @@
             <div class="good-vibes-grid">
                 <!-- Wallpaper Images will be added here by script -->
             </div>
-<p style="margin-top: 10px;font-size: 20px; color: #333;">Buy the "Good Vibes" Collection (Non-Compressed) for just <strong>$1.99</strong>!</p>
-<p style="font-size: 16px; color: #555;">Get high-quality, exclusive wallpapers in their original format—no compression, just pure quality. The non-compressed version offers slightly better quality compared to this collection, and it's absolutely worth the price. Plus, your purchase supports us in creating more amazing content!</p>
-<button onclick="window.location.href='https://teamagent.mysellix.io/pay/57e59a-c7a07792df-fd6413'" style="background-color: #28a745; color: white; padding: 12px 24px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Buy Now</button>
-
+            <p class="buy-now-text">Buy the "Good Vibes" Collection (Non-Compressed) for just <strong>$1.99</strong>!</p>
+            <p class="details-text">Get high-quality, exclusive wallpapers in their original format—no compression, just pure quality. The non-compressed version offers slightly better quality compared to this collection, and it's absolutely worth the price. Plus, your purchase supports us in creating more amazing content!</p>
+            <button class="buy-btn" onclick="window.location.href='https://teamagent.mysellix.io/pay/57e59a-c7a07792df-fd6413'">Buy Now</button>
         </section>
-    </main>
+
+        <!-- About Me Section -->
+<!-- About Me Section -->
+<section class="about-me">
+    <h2>About Me</h2>
+    <p>My name is Jenil, and I’m passionate about good wallpapers. Although I’m not a designer, I noticed there was a gap in high-quality wallpapers, so I decided to do something about it. My wallpapers are made using free assets, as I’m not a professional designer, but I aim to create wallpapers that resonate with people who appreciate aesthetics and quality.</p>
+    <p>I hope you find something that fits your style. Feel free to connect with me!</p>
+    <a href="https://instagram.com/jxnil.fr" target="_blank">Instagram</a>
+</section>
+
 
     <footer>
         <p>2025 SableWall.</p>
