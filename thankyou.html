@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Good Vibes Wallpaper Collection</title>
+    <title>Thank You - Sablewall</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #121212;
             color: white;
             display: flex;
@@ -20,6 +20,16 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .container {
@@ -30,33 +40,60 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             max-width: 500px;
             width: 100%;
+            transform: scale(0.9);
+            animation: scaleUp 0.5s ease-out forwards;
+        }
+
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.9);
+            }
+            to {
+                transform: scale(1);
+            }
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #4CAF50;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             font-weight: bold;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         p {
             font-size: 1.2rem;
             color: #ddd;
             margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .purchase-info {
             font-size: 1.5rem;
             font-weight: bold;
             color: #f39c12;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .thank-you-message {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #aaa;
             margin-top: 30px;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .button {
@@ -67,17 +104,20 @@
             border-radius: 5px;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
         }
 
         .button:hover {
             background-color: #45a049;
+            transform: scale(1.05);
         }
 
         footer {
             margin-top: 30px;
             font-size: 0.9rem;
             color: #888;
+            animation: fadeIn 2.5s ease-in-out;
         }
 
         footer a {
@@ -93,18 +133,18 @@
 <body>
 
     <div class="container">
-        <h1>Thank You for Your Purchase! 🎉</h1>
-        <p>We appreciate your support. Your purchase from SableWall has been successfully completed!</p>
+        <h1>Thank You So Much! 🎉</h1>
+        <p>Your support means the world to us. We're beyond grateful that you chose SableWall for your wallpaper needs. Your purchase is now complete, and we can't wait to see how our wallpapers brighten your day!</p>
 
         <div class="purchase-info" id="purchaseDetails"></div>
 
-        <p class="thank-you-message">Your wallpaper collection is ready to download, and we hope it brings positive vibes to your desktop! 🌟</p>
+        <p class="thank-you-message">Your wallpaper collection is ready to download! We hope these Good Vibes fill your desktop with positive energy and inspire you every day. 🌟</p>
 
         <a href="/" class="button">Back to Homepage</a>
     </div>
 
     <footer>
-        <p>Created with ♥ by <a href="https://instagram.com/jxnil.fr">jxnil.fr</a></p>
+        <p>Made with love and passion by <a href="https://instagram.com/jxnil.fr">jxnil.fr</a></p>
     </footer>
 
     <script>
@@ -114,16 +154,15 @@
             return urlParams.get(param);
         }
 
-        // Get the product name and price from the query string and display them
+        // Get the product name, price, and invoice ID from the query string and display them
         const product = getQueryParam('product');
         const price = getQueryParam('price');
         const iid = getQueryParam('invoice')
-        const email = getQueryParam('email')
 
         const purchaseDetails = document.getElementById('purchaseDetails');
 
         if (product && price) {
-            purchaseDetails.innerHTML = `You purchased: ${product} for $${price}<br>Invoice ID: ${iid}<br><br>Check your email for the files `;
+            purchaseDetails.innerHTML = `You purchased: ${product} for $${price}<br>Invoice ID: ${iid}<br><br>Check your email for the files.`;
         } else {
             purchaseDetails.textContent = 'No product details found.';
         }
