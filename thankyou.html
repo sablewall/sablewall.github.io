@@ -123,7 +123,7 @@
         const purchaseDetails = document.getElementById('purchaseDetails');
 
         if (product && price) {
-            purchaseDetails.textContent = `You purchased: ${product} for $${price}<br>Invoice ID: ${iid}<br>Email: ${email}<br><br>Check your email for the files `;
+            purchaseDetails.innerHTML = `You purchased: ${product} for $${price}<br>Invoice ID: ${iid}<br><br>Check your email for the files `;
         } else {
             purchaseDetails.textContent = 'No product details found.';
         }
