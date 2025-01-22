@@ -131,11 +131,37 @@
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         img:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         /* Footer Styling */
@@ -180,9 +206,10 @@
             <div class="good-vibes-grid">
                 <!-- Wallpaper Images will be added here by script -->
             </div>
-            <p style="margin-top: 10px;font-size: 20px; color: #333;">Buy the "Good Vibes" Collection (Non-Compressed) for just <strong>$1.99</strong>!</p>
-            <p style="font-size: 16px; color: #555;">Get high-quality, exclusive wallpapers in their original format—no compression, just pure quality.</p>
-            <button onclick="window.location.href='https://teamagent.mysellix.io/pay/57e59a-c7a07792df-fd6413'" style="background-color: #28a745; color: white; padding: 12px 24px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Buy Now</button>
+<p style="margin-top: 10px;font-size: 20px; color: #333;">Buy the "Good Vibes" Collection (Non-Compressed) for just <strong>$1.99</strong>!</p>
+<p style="font-size: 16px; color: #555;">Get high-quality, exclusive wallpapers in their original format—no compression, just pure quality. The non-compressed version offers slightly better quality compared to this collection, and it's absolutely worth the price. Plus, your purchase supports us in creating more amazing content!</p>
+<button onclick="window.location.href='https://teamagent.mysellix.io/pay/57e59a-c7a07792df-fd6413'" style="background-color: #28a745; color: white; padding: 12px 24px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Buy Now</button>
+
         </section>
     </main>
 
@@ -212,11 +239,35 @@
                 const img = document.createElement('img');
                 img.src = wallpaper.url;
                 img.alt = wallpaper.title;
+                img.onclick = () => openModal(wallpaper.url);
                 collectionElement.appendChild(img);
             });
         };
         
-        loadWallpapers("good-vibes")
+        loadWallpapers("good-vibes");
+
+        // Modal functionality
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+        document.body.appendChild(modal);
+
+        const modalContent = document.createElement('div');
+        modalContent.classList.add('modal-content');
+        modal.appendChild(modalContent);
+
+        const closeModal = () => {
+            modal.style.display = 'none';
+        };
+
+        modal.addEventListener('click', closeModal);
+
+        const openModal = (imgUrl) => {
+            const img = document.createElement('img');
+            img.src = imgUrl;
+            modalContent.innerHTML = ''; // Clear any previous images
+            modalContent.appendChild(img);
+            modal.style.display = 'flex';
+        };
     </script>
 </body>
 </html>
